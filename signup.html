@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PurePlates - Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #e6f5e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .signup-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #43a047;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .signup-btn:hover {
+      background-color: #388e3c;
+    }
+
+    .footer {
+      margin-top: 16px;
+      text-align: center;
+      color: #555;
+    }
+
+    .footer a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Join PurePlates</h2>
+    <form action="personal-details.html">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="password">Create Password</label>
+        <input type="password" id="password" required placeholder="••••••••" />
+      </div>
+      <button type="submit" class="signup-btn">Continue</button>
+    </form>
+    <div class="footer">
+      Already have an account? <a href="#">Login</a>
+    </div>
+  </div>
+  <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent direct form submission
+  
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+  
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", password);
+  
+      // Go to next page
+      window.location.href = "personal-details.html";
+    });
+  </script>
+  
+</body>
+</html>
